@@ -1,5 +1,4 @@
 //--------Read file synchronously in node.js---------
-console.log("hello world !!");
 
 const md = require('fs');
 
