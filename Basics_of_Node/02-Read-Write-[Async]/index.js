@@ -3,7 +3,12 @@
 
 const mod= require('fs');
 
-mod.readFile('./txt/start.txt' ,'utf-8' , (err,data) =>{
+mod.readFile('./txte/start.txt' ,'utf-8' , (err,data) =>{
+
+    if(err)
+    {
+       return console.log("Failed To Load ... !!!")
+    }
 
     mod.readFile(`./txt/${data}.txt` ,'utf-8' , (err,new_data) =>{
 
@@ -15,9 +20,6 @@ mod.readFile('./txt/start.txt' ,'utf-8' , (err,data) =>{
 
             console.log("data is written Successfuly...!!!")
         })
-
-
-
     })
 })
 
