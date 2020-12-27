@@ -8,6 +8,8 @@ mod.readFile('./txt/start.txt' ,'utf-8' , (err,data) =>{
     mod.readFile(`./txt/${data}.txt` ,'utf-8' , (err,new_data) =>{
 
         console.log(new_data);
+         
+        //--------Writing File Asynchronously---------------
 
         mod.writeFile('./txt/output.txt',`This the new data which we have to write \n ${new_data}`,'utf-8', err =>{
 
@@ -21,5 +23,4 @@ mod.readFile('./txt/start.txt' ,'utf-8' , (err,data) =>{
 
 console.log("Reading value......");
 
-//--------Writing data Asynchronously----------
 
