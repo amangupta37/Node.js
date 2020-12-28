@@ -1,4 +1,4 @@
-//-------------Adding HTTP STATUS CODE (404 NOT FOUND) in Node.js-------------------
+//-------------Adding HTTP STATUS CODE (404 NOT FOUND) & HTTP HEADER in Node.js-------------------
 
 // Added a http modeule
 
@@ -27,16 +27,19 @@ const server = http.createServer((req,resp) =>{
         resp.end("This is a PRODUCT...!!!");
     }
     else
-    {
-        resp.writeHead(404); // Adding http status code for page not found (i.e 404 status code)
+    {   
+        // Adding http status code for page not found (i.e 404 status code)
+        resp.writeHead(404, {
+            'Content-type':'text/html'
+        }); 
 
-        resp.end("Page Not Found");
+        resp.end("<h1>Page Not Found</h1>");
     }
 })
 
 // Start The server
 
-server.listen(3000,'127.0.0.1', () =>{
+server.listen(7000,'127.0.0.1', () =>{
 
     console.log("Listining to request at port 3000");
 })
