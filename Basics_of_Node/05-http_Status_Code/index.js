@@ -28,10 +28,10 @@ const server = http.createServer((req,resp) =>{
     }
     else
     {   
-        // Adding http status code for page not found (i.e 404 status code)
+        // Adding http status code and http header for page not found (i.e 404 status code)
         resp.writeHead(404, {
-            'Content-type':'text/html',
-            'my-own-header':'hello world !!!'
+            'Content-type':'text/html', // http header
+            'my-own-header':'hello world !!!' // http header
         }); 
 
         resp.end("<h1>Page Not Found</h1>");
