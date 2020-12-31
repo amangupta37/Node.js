@@ -1,5 +1,5 @@
 //--------------Creating a simple web API -------------------------
-const fs = require('fs');
+const md = require('fs');
 const http = require('http');
 const url = require('url');
 
@@ -17,10 +17,13 @@ const server = http.createServer((req,res) =>{
    }
    else if(pathname==='/api')
    {    
-        fs.readFile('./dev-data/data.json','ut-8',(err,data) =>{
-             console.log(data);
+      const newdata =   md.readFile('./dev-data/data.json','utf-8',(err,data) =>{
+
+            
+            res.end(data);
          })
-      
+         
+        
    }
    else{
        res.end("Page not Available");
