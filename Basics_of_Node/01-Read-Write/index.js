@@ -1,9 +1,8 @@
 //--------Read file synchronously in node.js---------
 
 const md = require('fs');
-
+const path = require('path');
 const textread = md.readFileSync('./txt/read-this.txt' , 'utf-8');
-
 console.log(textread);
 
 
@@ -16,3 +15,4 @@ console.log("Data is sucessfully added in file");
 
 
 
+  
