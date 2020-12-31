@@ -17,11 +17,12 @@ const server = http.createServer((req,res) =>{
    }
    else if(pathname==='/api')
    {    
-      const newdata =   md.readFile('./dev-data/data.json','utf-8',(err,data) =>{
-
-            
+         md.readFile('./dev-data/data.json','utf-8',(err,data) =>{
+           res.writeHead(200,{
+               'Content-type':'applictaion/json'
+           });
             res.end(data);
-         })
+         });
          
         
    }
