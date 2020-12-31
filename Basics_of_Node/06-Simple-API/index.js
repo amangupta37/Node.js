@@ -18,16 +18,18 @@ const server = http.createServer((req,res) =>{
    else if(pathname==='/api')
    {    
          md.readFile('./dev-data/data.json','utf-8',(err,data) =>{
-           res.writeHead(200,{
-               'Content-type':'applictaion/json'
-           });
+            res.writeHead(200, {'Content-type' : 'applictaion/json'} );
             res.end(data);
-         });
+          
+         });                                                                           
          
         
    }
    else{
-       res.end("Page not Available");
+       res.writeHead(404,{
+           'Content-type':'text/html'
+       })
+       res.end("<h1>Page not Available</h1>");
    }
 
 })
