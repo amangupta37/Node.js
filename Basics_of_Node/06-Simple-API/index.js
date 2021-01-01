@@ -10,16 +10,20 @@ const server = http.createServer((req,res) =>{
 
     const pathname = req.url;
 
-   if(pathname==='/' || pathname === '/home')
+   if(pathname ==='/' || pathname === '/home')
    {
        
        res.end("Welcome to home");
    }
-   else if(pathname==='/api')
+   else if(pathname ==='/api')
    {    
+          //reading data from the file 
+
          md.readFile(`${__dirname}/dev-data/data.json`,'utf-8',(err,data) =>{
-            res.writeHead(200, {'Content-type' : 'applictaion/json'} );
-            res.end(data);
+
+            res.writeHead(200, {'Content-type' : 'text/json'} );  //showing data in json formate
+
+            res.end(data); // display data on webpage
           
          });                                                                           
          
