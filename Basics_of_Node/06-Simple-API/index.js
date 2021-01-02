@@ -7,7 +7,9 @@
 const md = require('fs');
 const http = require('http');
 const url = require('url');
+//----------------Read data Synchronously------------------
 
+const newdata = md.readFileSync(`${__dirname}/dev-data/data.json`,'utf-8')
 
 //-----------------Create a server--------------
 
@@ -22,17 +24,12 @@ const server = http.createServer((req,res) =>{
    }
    else if(pathname ==='/api')
    {    
-          //reading data from the file 
-
-         md.readFile(`${__dirname}/dev-data/data.json`,'utf-8',(err,data) =>{
+      
 
             res.writeHead(200, {'Content-type' : 'text/json'} );  //showing data in json formate
 
-            res.end(data); // display data on webpage
-          
-         });                                                                           
+            res.end(newdata); // display data on webpage                                                                       
          
-        
    }
    else{
        res.writeHead(404,{
