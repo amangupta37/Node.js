@@ -9,7 +9,7 @@ const url = require('url');
 //------------Read data Synchronously------------------
 
 const newdata = md.readFileSync(`${__dirname}/dev-data/data.json`,'utf-8')
-
+const tempoverview = md.readFileSync(`${__dirname}/templates/template-overview.html`,'utf-8');
 //-----------------Create a server--------------------
 
 const server = http.createServer((req,res) =>{
@@ -18,8 +18,8 @@ const server = http.createServer((req,res) =>{
 
    if(pathname ==='/' || pathname === '/overview')
    {
-       
-       res.end("Welcome to OVERVIEW");
+       res.write(200,{'Context-type':'text.html'})
+       res.end(tempoverview);
    }
    else if(pathname ==='/product')
    {    
