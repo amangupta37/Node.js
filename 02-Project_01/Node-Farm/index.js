@@ -18,7 +18,7 @@ const server = http.createServer((req,res) =>{
 
    if(pathname ==='/' || pathname === '/overview')
    {
-       res.write(200,{'Context-type':'text.html'})
+       res.writeHead(200,{'Content-type':'text/html'})
        res.end(tempoverview);
    }
    else if(pathname ==='/product')
@@ -44,5 +44,5 @@ const server = http.createServer((req,res) =>{
 
 server.listen(7000,'127.0.0.1' , () =>{
 
-    console.log("Listining to the request at port 4000");
+    console.log("Listining to the request at port 7000");
 })
