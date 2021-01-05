@@ -16,10 +16,14 @@ const server = http.createServer((req,res) =>{
 
     const pathname = req.url;
 
-   if(pathname ==='/' || pathname === '/home')
+   if(pathname ==='/' || pathname === '/overview')
    {
        
-       res.end("Welcome to home");
+       res.end("Welcome to OVERVIEW");
+   }
+   else if(pathname ==='/product')
+   {    
+     res.end("THIS IS PRODUCT PAGE");
    }
    else if(pathname ==='/api')
    {    
@@ -38,7 +42,7 @@ const server = http.createServer((req,res) =>{
 
 //-------------listen incomming request--------------
 
-server.listen(4000,'127.0.0.1' , () =>{
+server.listen(7000,'127.0.0.1' , () =>{
 
     console.log("Listining to the request at port 4000");
 })
