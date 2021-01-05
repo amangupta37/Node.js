@@ -7,9 +7,11 @@ const http = require('http');
 const url = require('url');
 
 //------------Read data Synchronously------------------
+const temp_Overview = md.readFileSync(`${__dirname}/templates/template-overview.html`,'utf-8');
 
 const newdata = md.readFileSync(`${__dirname}/dev-data/data.json`,'utf-8')
-const tempoverview = md.readFileSync(`${__dirname}/templates/template-overview.html`,'utf-8');
+const dataObj = JSON.parse(newdata);
+
 //-----------------Create a server--------------------
 
 const server = http.createServer((req,res) =>{
@@ -17,9 +19,10 @@ const server = http.createServer((req,res) =>{
     const pathname = req.url;
 
    if(pathname ==='/' || pathname === '/overview')
-   {
+   {    
+       const ovrdata = dataObj.map(el =>)
        res.writeHead(200,{'Content-type':'text/html'})
-       res.end(tempoverview);
+       res.end(temp_Overview);
    }
    else if(pathname ==='/product')
    {    
