@@ -10,7 +10,7 @@ const url = require('url');
 const temp_Overview = md.readFileSync(`${__dirname}/templates/template-overview.html`,'utf-8');
 
 const newdata = md.readFileSync(`${__dirname}/dev-data/data.json`,'utf-8')
-const dataObj = JSON.parse(newdata);
+const dataObj = JSON.parse(newdata); // string to json coversion
 
 //-----------------Create a server--------------------
 
