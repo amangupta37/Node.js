@@ -20,7 +20,7 @@ const server = http.createServer((req,res) =>{
 
    if(pathname ==='/' || pathname === '/overview')
    {    
-       const ovrdata = dataObj.map(el =>)
+       const ovrdata = dataObj.map(el)
        res.writeHead(200,{'Content-type':'text/html'})
        res.end(temp_Overview);
    }
