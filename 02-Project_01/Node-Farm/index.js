@@ -8,7 +8,7 @@ const url = require('url');
 
 //------------Read data Synchronously------------------
 const temp_Overview = md.readFileSync(`${__dirname}/templates/template-overview.html`,'utf-8');
-
+const temp_Card = md.readFileSync(`${__dirname}/templates/template-card.html`,'utf-8');
 const newdata = md.readFileSync(`${__dirname}/dev-data/data.json`,'utf-8')
 const dataObj = JSON.parse(newdata); // string to json coversion
 
@@ -20,13 +20,15 @@ const server = http.createServer((req,res) =>{
 
    if(pathname ==='/' || pathname === '/overview')
    {    
-       const ovrdata = dataObj.map(el)
+     //  const ovrdata = dataObj.map(el)
        res.writeHead(200,{'Content-type':'text/html'})
        res.end(temp_Overview);
+      
    }
    else if(pathname ==='/product')
    {    
      res.end("THIS IS PRODUCT PAGE");
+   
    }
    else if(pathname ==='/api')
    {    
@@ -48,4 +50,5 @@ const server = http.createServer((req,res) =>{
 server.listen(7000,'127.0.0.1' , () =>{
 
     console.log("Listining to the request at port 7000");
+    
 })
