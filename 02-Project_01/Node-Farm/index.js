@@ -15,14 +15,22 @@ const dataObj = JSON.parse(newdata); // string to json coversion
 
 //-----------------Create a server---------------------
 
+function replacetemp (objdata,changedata) {
+
+  //  console.log(objdata);
+
+    //console.log(changedata);
+
+}
+
 const server = http.createServer((req,res) =>{
 
     const pathname = req.url;
 
    if(pathname ==='/' || pathname === '/overview')
    {    
-       console.log(temp_Card);
-       //const ovrdata = dataObj.map(el => replacetemp(el,temp_Card))
+       
+      const ovrdata = dataObj.map(el => replacetemp(el,temp_Card))
      
        res.writeHead(200,{'Content-type':'text/html'})
        res.end(temp_Overview);
