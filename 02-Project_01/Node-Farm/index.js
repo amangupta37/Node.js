@@ -21,10 +21,8 @@ const server = http.createServer((req,res) =>{
 
    if(pathname ==='/' || pathname === '/overview')
    {    
-       const ovrdata = dataObj.map(el => {
-        console.log(el);
-       }
-        )
+       console.log(temp_Card);
+       //const ovrdata = dataObj.map(el => replacetemp(el,temp_Card))
      
        res.writeHead(200,{'Content-type':'text/html'})
        res.end(temp_Overview);
