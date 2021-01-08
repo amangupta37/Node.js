@@ -20,17 +20,20 @@ function replacetemp (objdata,changedata) {
   //  console.log(objdata);
 
     //console.log(changedata);
-  const placedata = changedata.replace(/%PRODUCTNAME%/g,objdata.productName);
+  let  placedata = changedata.replace(/%PRODUCTNAME%/g,objdata.productName);
 
-  placedata.replace(/%IMAGE%/g,objdata.image);
-  placedata.replace(/%PRICE%/g,objdata.price);
-  placedata.replace(/%FROM%/g,objdata.from);
-  placedata.replace(/%NUTRIENTS%/g,objdata.nutrients);
-  placedata.replace(/%QUANTITY%/g,objdata.quantity);
-  placedata.replace(/%DESCRIPTIONS%/g,objdata.description);
-  placedata.replace(/%ID%/g,objdata.id);
+   placedata = placedata.replace(/%IMAGE%/g,objdata.image);
+   placedata =placedata.replace(/%PRICE%/g,objdata.price);
+   placedata =placedata.replace(/%FROM%/g,objdata.from);
+   placedata =placedata.replace(/%NUTRIENTS%/g,objdata.nutrients);
+   placedata =placedata.replace(/%QUANTITY%/g,objdata.quantity);
+   placedata =placedata.replace(/%DESCRIPTIONS%/g,objdata.description);
+   placedata =placedata.replace(/%ID%/g,objdata.id);
   if( !objdata.organic)
-  placedata = placedata.replace(/%NOT_ORGANIC%/g,'not-organic')
+  {
+  placedata = placedata.replace(/%NOT_ORGANIC%/g,)
+  }
+  console.log(placedata);
 }
 
 const server = http.createServer((req,res) =>{
