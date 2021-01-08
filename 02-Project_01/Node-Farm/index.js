@@ -29,7 +29,8 @@ function replacetemp (objdata,changedata) {
   placedata.replace(/%QUANTITY%/g,objdata.quantity);
   placedata.replace(/%DESCRIPTIONS%/g,objdata.description);
   placedata.replace(/%ID%/g,objdata.id);
-
+  if( !objdata.organic)
+  placedata = placedata.replace(/%NOT_ORGANIC%/g,'not-organic')
 }
 
 const server = http.createServer((req,res) =>{
