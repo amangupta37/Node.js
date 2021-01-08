@@ -20,7 +20,14 @@ function replacetemp (objdata,changedata) {
   //  console.log(objdata);
 
     //console.log(changedata);
-    console.log( changedata.replace(/%PRODUCTNAME%/g,objdata.productName));
+  const placedata = changedata.replace(/%PRODUCTNAME%/g,objdata.productName);
+
+  placedata.replace(/%IMAGE%/g,objdata.image);
+  placedata.replace(/%PRICE%/g,objdata.iamge);
+  placedata.replace(/%FROM%/g,objdata.iamge);
+  placedata.replace(/%NUTRIENTS%/g,objdata.iamge);
+  placedata.replace(/%DESCRIPTIONS%/g,objdata.iamge);
+  placedata.replace(/%ID%/g,objdata.iamge);
 
 }
 
