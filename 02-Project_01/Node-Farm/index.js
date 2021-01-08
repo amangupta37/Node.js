@@ -20,7 +20,7 @@ function replacetemp (objdata,changedata) {
   //  console.log(objdata);
 
     //console.log(changedata);
-    changedata.replace('/{%PRODUCTNAME%}/g',objdata.name)
+    console.log( changedata.replace('/{%PRODUCTNAME%}/g',objdata.name));
 
 }
 
