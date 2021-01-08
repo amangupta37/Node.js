@@ -26,6 +26,7 @@ function replacetemp (objdata,changedata) {
   placedata.replace(/%PRICE%/g,objdata.price);
   placedata.replace(/%FROM%/g,objdata.from);
   placedata.replace(/%NUTRIENTS%/g,objdata.nutrients);
+  placedata.replace(/%QUANTITY%/g,objdata.quantity);
   placedata.replace(/%DESCRIPTIONS%/g,objdata.description);
   placedata.replace(/%ID%/g,objdata.id);
 
