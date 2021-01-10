@@ -17,9 +17,7 @@ const dataObj = JSON.parse(newdata); // string to json coversion
 
 function replacetemp (objdata,changedata) {
 
-  //  console.log(objdata);
-
-    //console.log(changedata);
+  
   let  placedata = changedata.replace(/{%PRODUCTNAME%}/g,objdata.productName);
 
    placedata = placedata.replace(/{%IMAGE%}/g,objdata.image);
