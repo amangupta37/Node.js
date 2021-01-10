@@ -40,7 +40,6 @@ const server = http.createServer((req,res) =>{
    {    
        
       const ovrdata = dataObj.map(el => replacetemp(el,temp_Card))
-      //console.log(ovrdata);
      
        res.writeHead(200,{'Content-type':'text/html'})
        const finaloutput = temp_Overview.replace(/%PRODUCT_CARD%/,ovrdata)
