@@ -17,7 +17,7 @@ const dataObj = JSON.parse(newdata); // string to json coversion
 
 //-----------------Create a server---------------------
 
-function replacetemp (objdata,changedata) {
+function replacetemp (objdata , changedata) {
 
   
   let  placedata = changedata.replace(/{%PRODUCTNAME%}/g,objdata.productName);
@@ -57,11 +57,9 @@ const server = http.createServer((req,res) =>{
     
     const product  = dataObj [query.id]; 
 
-   console.log(query.id);
-   console.log(pathname);
-   console.log(product);
+     const output  = replacetemp(product,temp_product);
 
-      res.end("this is new ")
+      res.end(output);
    
    }
    else if(pathname ==='/api')
