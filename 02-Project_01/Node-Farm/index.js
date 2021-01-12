@@ -37,8 +37,7 @@ function replacetemp (objdata,changedata) {
 const server = http.createServer((req,res) =>{
 
     const path = req.url;
-    const pathname = url.parse(path,true);
-    console.log(pathname);
+    const {pathname , query } = url.parse(path,true);
 
    if(pathname ==='/' || pathname === '/overview')
    {    
@@ -54,7 +53,13 @@ const server = http.createServer((req,res) =>{
    else if(pathname ==='/product')
    {    
 
-    console.log(pathname);
+    
+    
+    const product  = dataObj [query.id]; 
+
+   console.log(query.id);
+   console.log(pathname);
+   console.log(product);
 
       res.end("this is new ")
    
