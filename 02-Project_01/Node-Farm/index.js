@@ -42,7 +42,7 @@ const server = http.createServer((req,res) =>{
    if(pathname ==='/' || pathname === '/overview')
    {    
        
-      const ovrdata = dataObj.map(el => replacetemp(el,temp_Card))
+       const ovrdata = dataObj.map(el => replacetemp(el,temp_Card))
      
        res.writeHead(200,{'Content-type':'text/html'}) 
 
@@ -53,7 +53,8 @@ const server = http.createServer((req,res) =>{
    else if(pathname ==='/product')
    {    
 
-    
+    res.writeHead(200, {'Content-type' : 'text/html'} );  //showing data in json formate
+
     
     const product  = dataObj [query.id]; 
 
