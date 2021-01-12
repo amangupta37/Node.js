@@ -9,6 +9,8 @@ const url = require('url');
 //------------Read data Synchronously------------------
 
 const temp_Overview = md.readFileSync(`${__dirname}/templates/template-overview.html`,'utf-8');
+const temp_product = md.readFileSync(`${__dirname}/templates/template-product.html`,'utf-8');
+
 const temp_Card = md.readFileSync(`${__dirname}/templates/template-card.html`,'utf-8');
 const newdata = md.readFileSync(`${__dirname}/dev-data/data.json`,'utf-8')
 const dataObj = JSON.parse(newdata); // string to json coversion
@@ -34,21 +36,27 @@ function replacetemp (objdata,changedata) {
 
 const server = http.createServer((req,res) =>{
 
-    const pathname = req.url;
+    const path = req.url;
+    const pathname = url.parse(path,true);
+    console.log(pathname);
 
    if(pathname ==='/' || pathname === '/overview')
    {    
        
       const ovrdata = dataObj.map(el => replacetemp(el,temp_Card))
      
-       res.writeHead(200,{'Content-type':'text/html'})
+       res.writeHead(200,{'Content-type':'text/html'}) 
+
        const finaloutput = temp_Overview.replace(/%PRODUCT_CARD%/,ovrdata)
        res.end(finaloutput);
       
    }
    else if(pathname ==='/product')
    {    
-     res.end("THIS IS PRODUCT PAGE");
+
+    console.log(pathname);
+
+      res.end("this is new ")
    
    }
    else if(pathname ==='/api')
