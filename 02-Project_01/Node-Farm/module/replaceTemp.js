@@ -1,4 +1,4 @@
-module.exports = (objdata , changedata) {
+module.exports = (objdata , changedata) => {
 
   
     let  placedata = changedata.replace(/{%PRODUCTNAME%}/g,objdata.productName);
