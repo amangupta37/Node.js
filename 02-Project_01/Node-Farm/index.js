@@ -64,9 +64,12 @@ const server = http.createServer((req,res) =>{
    
    }
    else if(pathname ==='/api')
-   {    
+   {  
+     
+
       res.writeHead(200, {'Content-type' : 'text/json'} );  //showing data in json formate
-      res.end(newdata); // display data on webpage                                                                       
+      res.end(newdata); // display data on webpage 
+                                                                
          
    }
    else{
