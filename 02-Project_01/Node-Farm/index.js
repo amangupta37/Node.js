@@ -6,6 +6,8 @@ const md = require('fs');
 const http = require('http');
 const url = require('url');
 
+const replacetemp = require('./module/replaceTemp');
+
 //------------Read data Synchronously------------------
 
 const temp_Overview = md.readFileSync(`${__dirname}/templates/template-overview.html`,'utf-8');
@@ -17,22 +19,6 @@ const dataObj = JSON.parse(newdata); // string to json coversion
 
 //-----------------Create a server---------------------
 
-function replacetemp (objdata , changedata) {
-
-  
-  let  placedata = changedata.replace(/{%PRODUCTNAME%}/g,objdata.productName);
-
-   placedata = placedata.replace(/{%IMAGE%}/g,objdata.image);
-   placedata =placedata.replace(/{%PRICE%}/g,objdata.price);
-   placedata =placedata.replace(/{%FROM%}/g,objdata.from);
-   placedata =placedata.replace(/{%NUTRIENTS%}/g,objdata.nutrients);
-   placedata =placedata.replace(/{%QUANTITY%}/g,objdata.quantity);
-   placedata =placedata.replace(/{%DESCRIPTIONS%}/g,objdata.description);
-   placedata =placedata.replace(/{%ID%}/g,objdata.id);
-   if(!objdata.organic)
-   placedata = placedata.replace(/{%NOT_ORGANIC%}/g, 'not-organic')
-   return placedata;
-}
 
 const server = http.createServer((req,res) =>{
 
