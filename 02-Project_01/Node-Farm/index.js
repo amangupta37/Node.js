@@ -2,11 +2,24 @@
 
 //---------------Module Required-----------------------
 
+
+//----------------Core Modules---------------
 const md = require('fs');
 const http = require('http');
 const url = require('url');
 
+//----------------Global Modules---------------
+
+const slugify = require('slugify'); //for string to slug conversion
+
+console.log(slugify('Aman Gupta From Ranchi',{lower:true}));
+
+//----------------Local Modules---------------
+
 const replacetemp = require('./module/replaceTemp');
+
+
+
 
 //------------Read data Synchronously------------------
 
