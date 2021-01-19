@@ -4,6 +4,7 @@
 
 
 //----------------Core Modules---------------
+
 const md = require('fs');
 const http = require('http');
 const url = require('url');
@@ -12,12 +13,10 @@ const url = require('url');
 
 const slugify = require('slugify'); //for string to slug conversion
 
-console.log(slugify('Aman Gupta From Ranchi',{lower:true}));
 
 //----------------Local Modules---------------
 
 const replacetemp = require('./module/replaceTemp');
-
 
 
 
@@ -29,6 +28,7 @@ const temp_product = md.readFileSync(`${__dirname}/templates/template-product.ht
 const temp_Card = md.readFileSync(`${__dirname}/templates/template-card.html`,'utf-8');
 const newdata = md.readFileSync(`${__dirname}/dev-data/data.json`,'utf-8')
 const dataObj = JSON.parse(newdata); // string to json coversion
+
 
 //-----------------Create a server---------------------
 
