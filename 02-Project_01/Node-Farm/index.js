@@ -1,6 +1,6 @@
 //--------------------------------Creating a simple web API ----------------------------------
 
-//---------------Module Required-----------------------
+//-------------------Module Required-----------------------
 
 
 //----------------Core Modules---------------
@@ -9,7 +9,7 @@ const md = require('fs');
 const http = require('http');
 const url = require('url');
 
-//----------------Global Modules---------------
+//----------------Global Modules-------------
 
 const slugify = require('slugify'); //for string to slug conversion
 
@@ -20,7 +20,7 @@ const replacetemp = require('./module/replaceTemp');
 
 
 
-//------------Read data Synchronously------------------
+//------------------Read data Synchronously------------------
 
 const temp_Overview = md.readFileSync(`${__dirname}/templates/template-overview.html`,'utf-8');
 const temp_product = md.readFileSync(`${__dirname}/templates/template-product.html`,'utf-8');
@@ -43,11 +43,10 @@ const server = http.createServer((req,res) =>{
        
        const ovrdata = dataObj.map(el => replacetemp(el,temp_Card))
      
-       res.writeHead(200,{'Content-type':'text/html'}) 
+       res.writeHead(200,{'Content-type': 'text/html'}) 
 
        const finaloutput = temp_Overview.replace(/%PRODUCT_CARD%/,ovrdata)
        res.end(finaloutput);
-      
    }
    else if(pathname ==='/product')
    {    
@@ -60,8 +59,7 @@ const server = http.createServer((req,res) =>{
      const output  = replacetemp(product,temp_product);
 
       res.end(output);
-   
-   }
+    }
    else if(pathname ==='/api')
    {  
      
